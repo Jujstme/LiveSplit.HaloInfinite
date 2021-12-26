@@ -2,7 +2,7 @@
 <updates>
 	<update version="1.0.1">
 		<files>
-			<file path="Components/update.LiveSplit.HaloInfinite.dll" status="changed" />
+			<file path="Components/LiveSplit.HaloInfinite.dll" status="changed" />
 		</files>
 		<changelog>
 			<change>First Release</change>
