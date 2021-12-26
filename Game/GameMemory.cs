@@ -13,6 +13,7 @@ namespace LiveSplit.HaloInfinite
         // Game process
         private readonly Process game;
         public bool IsGameHooked => game != null && !game.HasExited;
+        public bool GameHasExited => game.HasExited;
         public bool IsAutosplitterEnabled = true;
 
         // Imported game data

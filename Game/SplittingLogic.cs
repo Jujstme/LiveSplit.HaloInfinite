@@ -15,6 +15,7 @@ namespace LiveSplit.HaloInfinite
 
         public void Update()
         {
+            if (watchers != null && watchers.GameHasExited) this.OnIsLoading?.Invoke(this, true);
             if (!VerifyOrHookGameProcess() || !watchers.IsAutosplitterEnabled) return;
             watchers.Update();
             if (TimerNotRunning()) watchers.SplitBools = new SplitBools();
@@ -72,7 +73,7 @@ namespace LiveSplit.HaloInfinite
         bool VerifyOrHookGameProcess()
         {
             if (watchers != null && watchers.IsGameHooked) return true;
-            try { watchers = new Watchers(); } catch { Thread.Sleep(500); return false; }
+            try { watchers = new Watchers(); } catch { watchers = null; Thread.Sleep(500); return false; }
             return true;
         }
     }

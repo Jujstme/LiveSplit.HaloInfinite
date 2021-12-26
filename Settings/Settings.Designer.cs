@@ -133,7 +133,7 @@
             this.groupBox2.Location = new System.Drawing.Point(11, 69);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox2.Size = new System.Drawing.Size(455, 390);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -568,9 +568,9 @@
             // 
             this.groupBox1.Controls.Add(this.chkRunStart);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.Size = new System.Drawing.Size(455, 47);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -583,7 +583,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(126, 13);
             this.label12.TabIndex = 3;
-            this.label12.Text = "Autosplitter version: 1.0.1";
+            this.label12.Text = "Autosplitter version: 1.0.2";
             // 
             // label13
             // 
@@ -617,7 +617,7 @@
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Settings";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(475, 500);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
