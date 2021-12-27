@@ -1,5 +1,6 @@
 <h1> <img src="https://raw.githubusercontent.com/Jujstme/LiveSplit.HaloInfinite/master/Resources/HaloRunsLogo.png" alt="HaloRuns" align="middle"/> Halo Infinite Autosplitter</h1>
 
+<img src="https://raw.githubusercontent.com/Jujstme/LiveSplit.HaloInfinite/master/Resources/SettingsMenu.png">
 This autosplitter is meant to be used together with LiveSplit to help players interested into speedruning Halo Infinite.
 
 ## General info
