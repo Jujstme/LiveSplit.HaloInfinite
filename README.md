@@ -22,4 +22,4 @@ This autosplitter is meant to be used together with LiveSplit to help players in
 * Hit OK to save settings.
 
 ## Halo Infinite speedrunning leaderboards
-Check <a href="https://haloruns.com/leaderboards/infinite/">leaderboard</a> on the HaloRuns.com website.
+Check the <a href="https://haloruns.com/leaderboards/infinite/">leaderboards</a> on the HaloRuns.com website.
