@@ -73,6 +73,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.chkIGT = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -566,6 +567,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkIGT);
             this.groupBox1.Controls.Add(this.chkRunStart);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
@@ -583,7 +585,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(126, 13);
             this.label12.TabIndex = 3;
-            this.label12.Text = "Autosplitter version: 1.0.2";
+            this.label12.Text = "Autosplitter version: 1.0.3";
             // 
             // label13
             // 
@@ -604,6 +606,21 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "HaloRuns Discord";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // chkIGT
+            // 
+            this.chkIGT.AutoSize = true;
+            this.chkIGT.Checked = true;
+            this.chkIGT.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIGT.Enabled = false;
+            this.chkIGT.Location = new System.Drawing.Point(93, 20);
+            this.chkIGT.Name = "chkIGT";
+            this.chkIGT.Size = new System.Drawing.Size(102, 17);
+            this.chkIGT.TabIndex = 1;
+            this.chkIGT.Text = "Use Game Time";
+            this.toolTip1.SetToolTip(this.chkIGT, "According to the game rules on haloruns.com, runs are to be timed as RTA minus lo" +
+        "ads.");
+            this.chkIGT.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -673,5 +690,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox chkIGT;
     }
 }

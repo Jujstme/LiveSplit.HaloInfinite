@@ -22,6 +22,7 @@ namespace LiveSplit.HaloInfinite
         private StringWatcher StatusString { get; }
         private MemoryWatcher<bool> LoadScreen { get; }
         private MemoryWatcher<bool> LoadingIcon { get; }
+        private MemoryWatcher<byte> WarshipGbraakonStartTrigger { get; }
         private MemoryWatcher<byte> OutpostTremonius { get; }
         private MemoryWatcher<byte> FOBGolf { get; }
         private MemoryWatcher<byte> Tower { get; }
@@ -47,7 +48,7 @@ namespace LiveSplit.HaloInfinite
             this.LoadStatus.Current == 3 || this.LoadingIcon.Current || this.LoadScreen.Current || (this.LoadStatusPercentage.Current != 0 && this.LoadStatusPercentage.Current != 100) || (this.LoadStatusPercentage.Current == 100 && this.LoadStatus.Current < 4));
 			
         public SplitBools SplitBools = new SplitBools();
-        public bool StartTrigger => this.Map.Current == Maps.BanishedShip && this.IsLoading.Old && !this.IsLoading.Current;
+        public bool StartTrigger => this.Map.Current == Maps.BanishedShip && this.IsLoading.Old && !this.IsLoading.Current && this.WarshipGbraakonStartTrigger.Current == 0;
 		
         // Plot events triggers management
         public bool Plot_BanishedShip => !this.SplitBools.BanishedShip && this.Map.Old == Maps.BanishedShip && this.Map.Current == Maps.Foundation;
@@ -90,6 +91,7 @@ namespace LiveSplit.HaloInfinite
                     this.StatusString = new StringWatcher(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x4CA11B0), 255);
                     this.LoadScreen = new MemoryWatcher<bool>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x47E73E0));
                     this.LoadingIcon = new MemoryWatcher<bool>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x522A6D0));
+                    this.WarshipGbraakonStartTrigger = new MemoryWatcher<byte>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x482C908, 0xB55D0));
                     this.OutpostTremonius = new MemoryWatcher<byte>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x482C908, 0xB5558));
                     this.FOBGolf = new MemoryWatcher<byte>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x482C908, 0xB746C));
                     this.Tower = new MemoryWatcher<byte>(new DeepPointer(game.MainModuleWow64Safe().BaseAddress + 0x482C908, 0xB55B0));
@@ -162,6 +164,7 @@ namespace LiveSplit.HaloInfinite
                             if (ptr != IntPtr.Zero)
                             {
                                 IntPtr address = ptr + 4 + game.ReadValue<int>(ptr);
+                                this.WarshipGbraakonStartTrigger = new MemoryWatcher<byte>(new DeepPointer(address, 0xB55D0));
                                 this.OutpostTremonius           = new MemoryWatcher<byte>(new DeepPointer(address, 0xB5558));
                                 this.FOBGolf                    = new MemoryWatcher<byte>(new DeepPointer(address, 0xB746C));
                                 this.Tower                      = new MemoryWatcher<byte>(new DeepPointer(address, 0xB55B0));
